@@ -1,0 +1,49 @@
+<div class="container">
+  <p></p>
+  <h4><strong>Menú</strong></h4>
+  <br>
+  <div class="col-12">
+    <div class="row">
+      <div class="card col-md-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Gastos Consolidados</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Visualiza todos los gastos</h6>
+          <p class="card-text">Mantén el control de todos los gastos realizados de tú último mes.</p>
+        </div>
+        <div class="card-footer">
+          <a href="<%= family_expenses_path %>" class="card-link btn btn-danger btn-block"><i class="fa fa-money fa-1x" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="card col-md-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Familiares</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Lista de Familiares</h6>
+          <p class="card-text">Visualiza y gestiona los gastos de cada familiar además de ver su lista de deseos</p>
+        </div>
+        <div class="card-footer">
+          <a href="<%= family_index_path %>" class="card-link btn btn-danger btn-block"><i class="fa fa-users fa-1x" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="card col-md-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Planificador de ahorro</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Prioriza la lista de deseos familiar</h6>
+          <p class="card-text">Prioriza la lista de deseos familiar además de ver los gastos necesarios e innecesarios</p>
+        </div>
+        <div class="card-footer">
+          <a href="<%= family_savings_planner_path %>" class="card-link btn btn-danger btn-block"><i class="fa fa-book fa-1x" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="card col-md-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Titular</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Ver perfil del titular</h6>
+          <p class="card-text">Visualiza los montos mensuales de cada familiar, tus gastos y lista de deseos</p>
+        </div>
+        <div class="card-footer">
+          <a href="<%= family_holder_path %>" class="card-link btn btn-danger btn-block"><i class="fa fa-id-card-o fa-1x" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

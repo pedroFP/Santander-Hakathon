@@ -1,0 +1,182 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h4><strong>Lista De Deseos De La Familia</strong></h4>
+    </div>
+    <div class="col-md-6">
+      <p class="text-muted float-right"><strong>Monto Total:</strong> (Monto disponible de toda la familia)</p>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Prioridad</th>
+          <th scope="col">Familiar</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio Estimado</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>#1</th>
+          <td>Pedro</td>
+          <td>Viaje Cancún</td>
+          <td>$1.000.000</td>
+           <td><!-- Button trigger modal -->
+          <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-pencil fa-1x" aria-hidden="true"></i>
+          </button></td>
+        </tr>
+        <tr>
+          <th>#2</th>
+          <td>Javiera</td>
+          <td>Zapatos</td>
+          <td>$65.000</td>
+           <td><!-- Button trigger modal -->
+          <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-pencil fa-1x" aria-hidden="true"></i>
+          </button></td>
+        </tr>
+        <tr>
+          <th>#3</th>
+          <td>Carlos</td>
+          <td>PS4</td>
+          <td>$450.000</td>
+           <td><!-- Button trigger modal -->
+          <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-pencil fa-1x" aria-hidden="true"></i>
+          </button></td>
+        </tr>
+        <tr>
+          <th>#4</th>
+          <td>Larry</td>
+          <td>Manicure</td>
+          <td>$8.500</td>
+           <td><!-- Button trigger modal -->
+          <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-pencil fa-1x" aria-hidden="true"></i>
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-6">
+        <a href="<%= root_path %>" class="btn btn-info btn-sm">Volver</a>
+      </div>
+      <div class="col-6">
+        <p class="text-muted float-right">4 Artículos Deseados | Total: $1.073.500</p>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Monto Estimado</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" class="form-control" placeholder="Viaje Cancún"></td>
+              <td><input type="text" class="form-control" placeholder="$1.000.000"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-6">
+            <p class="text-muted"><strong>Monto Total:</strong> (Monto disponible de toda la familia)</p>
+          </div>
+          <div class="col-6">
+            <p class="text-muted float-right"><strong>$1.000.000</strong></p>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="card col-md-6" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Lista de deseos</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Ver lista de deseos</h6>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-muted">3 Artículos Deseados | Total: $1.523.500</p>
+          </div>
+        </div>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+    <div class="card col-md-6" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Gastos Familiares</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Tipos de Gastos:</h6>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-muted">Innecesario: $402.954 | Necesario: $4.000</p>
+          </div>
+        </div>
+        <canvas id="pieChart2"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  //pie
+  var ctxP = document.getElementById("pieChart").getContext('2d');
+  var myPieChart = new Chart(ctxP, {
+    type: 'pie',
+    data: {
+      labels: ["Viaje Cancún", "Zapatos", "Manicure", "PS4"],
+      datasets: [{
+        data: [1000000, 65000, 8500, 450000],
+        backgroundColor: ["#F7464A", "#4D5360", "#990000", "#ec0000"],
+        hoverBackgroundColor: ["#FF5A5E", "#616774", "#b30000", "#ef2e2e"]
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+
+  //pie2
+  var ctxP = document.getElementById("pieChart2").getContext('2d');
+  var myPieChart = new Chart(ctxP, {
+    type: 'pie',
+    data: {
+      labels: ["Necesario", "Innecesario"],
+      datasets: [{
+        data: [8000, 42954],
+        backgroundColor: ["#F7464A", "#4D5360"],
+        hoverBackgroundColor: ["#FF5A5E", "#616774"]
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+</script>

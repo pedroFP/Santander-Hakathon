@@ -1,0 +1,104 @@
+<div class="container">
+  <p></p>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Eduardo Araya</h1>
+    </div>
+    <div class="col-md-6">
+      <p></p>
+      <a href="<%= family_index_path %>" class="btn btn-sm btn-info float-right">Volver</a>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="card col-md-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Gasto mensual por producto</h5>
+          <canvas id="usersPieChart"></canvas>
+          <p></p>
+          <p class="card-subtitle mb-2 text-muted">Gasto Total: $900.000</p>
+          <p class="card-subtitle mb-2 text-muted">Monto Total: <br> (Monto Mensual - Gasto Total)</p>
+        </div>
+      </div>
+      <div class="card col-md-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Gastos</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Tipos de Gastos:</h6>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-muted">Innecesario: $42.954 | Necesario: $4.000</p>
+            </div>
+          </div>
+          <a href="<%= family_my_expenses_path %>" class="card-link btn btn-danger btn-block">Ver Lista</a>
+          <canvas id="pieChart2"></canvas>
+        </div>
+      </div>
+      <div class="card col-md-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Lista de deseos</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Ver lista de deseos</h6>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-muted">3 Artículos Deseados | Total: $1.073.500</p>
+            </div>
+          </div>
+          <a href="<%= family_wish_list_path %>" class="card-link btn btn-danger btn-block">Ver Lista</a>
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  //users_from_holder cardpie
+  var ctxP = document.getElementById("usersPieChart").getContext('2d');
+  var myPieChart = new Chart(ctxP, {
+    type: 'pie',
+    data: {
+      labels: ["Pedro", "Javiera", "Carlos"],
+      datasets: [{
+        data: [3000000, 3000000, 3000000],
+        backgroundColor: ["#F7464A", "#edba67", "#990000"],
+        hoverBackgroundColor: ["#FF5A5E", "#e59d27", "#b30000"]
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+
+  //pie
+  var ctxP = document.getElementById("pieChart").getContext('2d');
+  var myPieChart = new Chart(ctxP, {
+    type: 'pie',
+    data: {
+      labels: ["Viaje Cancún", "Zapatos", "Manicure"],
+      datasets: [{
+        data: [10000, 65000, 8500],
+        backgroundColor: ["#F7464A", "#edba67", "#990000"],
+        hoverBackgroundColor: ["#FF5A5E", "#e59d27", "#b30000"]
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+
+  //pie2
+  var ctxP = document.getElementById("pieChart2").getContext('2d');
+  var myPieChart = new Chart(ctxP, {
+    type: 'pie',
+    data: {
+      labels: ["Necesario", "Innecesario"],
+      datasets: [{
+        data: [8000, 42954],
+        backgroundColor: ["#F7464A", "#444444"],
+        hoverBackgroundColor: ["#FF5A5E", "#5b5a5b"]
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+</script>

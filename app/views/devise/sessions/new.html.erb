@@ -1,0 +1,31 @@
+<div class="conainer">
+  <div class="col-4 offset-4">
+    <p></p>
+    <br>
+    <h4 align="center"><strong>Ingresar</strong></h4>
+    <br>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Contraseña" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-group">
+          <%= f.check_box :remember_me %>
+          <%= f.label "Recuerdame" %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Aceptar", class: "btn btn-block red-bg btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>

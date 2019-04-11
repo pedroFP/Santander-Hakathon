@@ -1,0 +1,20 @@
+.bg-red{
+  background-color: #ec0000;
+}
+
+.turn-red {
+  color: #e60000;
+}
+
+.red-bg{
+  background: #e60000;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link:hover{
+  color: #f9b9b9;
+}
+
+.table .thead-dark th {
+  background-color: #5b5a5b;
+  border-color: #6d6d6d;
+}

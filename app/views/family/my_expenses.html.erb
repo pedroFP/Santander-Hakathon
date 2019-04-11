@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Mis Gastos</h4>
+    </div>
+    <div class="col-md-6">
+      <p class="text-muted float-right"><strong>Monto Total:</strong> (Monto disponible)</p>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Descripción de Gasto</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">Medio de pago</th>
+          <th scope="col">Monto</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>12-Abril-2015</th>
+          <td>Cervezas</td>
+          <td>Innecesario</td>
+          <td>Tarjeta de Débito</td>
+          <td>$42.954</td>
+          <td><!-- Button trigger modal -->
+          <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-pencil fa-1x" aria-hidden="true"></i>
+          </button></td>
+        </tr>
+        <tr>
+          <th>12-Abril-2015</th>
+          <td>Peluquería</td>
+          <td>Necesario</td>
+          <td>Tarjeta de Débito</td>
+          <td>$8.000</td>
+          <td><!-- Button trigger modal -->
+          <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-pencil fa-1x" aria-hidden="true"></i>
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <a href="<%= family_familiar_path %>" class="btn btn-info btn-sm">Volver</a>
+    </div>
+    <div class="col-8">
+      <p class="float-right text-muted">Innecesario: $402.954 | Necesario: $4.000</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i> Gasto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Descripción de Gasto</th>
+              <th scope="col">Categoría</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" class="form-control" placeholder="Nombre"></td>
+              <td>
+                <select class="form-control form-control-sm">
+                  <option>Necesario</option>
+                  <option>Innecesario</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
